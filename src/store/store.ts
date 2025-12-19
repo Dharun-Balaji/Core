@@ -8,7 +8,7 @@ export const store = configureStore({
 });
 
 store.subscribe(() => {
-    localStorage.setItem('kanban-state', JSON.stringify(store.getState().board));
+    localStorage.setItem('core-state', JSON.stringify(store.getState().board));
 });
 
 export type RootState = ReturnType<typeof store.getState>;

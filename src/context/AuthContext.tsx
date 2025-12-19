@@ -20,7 +20,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('kanban-user');
+    const storedUser = localStorage.getItem('core-user');
     if (storedUser) {
       setUser(JSON.parse(storedUser));
     }
@@ -35,12 +35,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       avatar: `https://ui-avatars.com/api/?name=${email}&background=3b82f6&color=fff`,
     };
     setUser(newUser);
-    localStorage.setItem('kanban-user', JSON.stringify(newUser));
+    localStorage.setItem('core-user', JSON.stringify(newUser));
   };
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem('kanban-user');
+    localStorage.removeItem('core-user');
   };
 
   return (

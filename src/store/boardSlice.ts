@@ -24,7 +24,7 @@ interface BoardState {
 
 const loadState = (): BoardState => {
     try {
-        const serializedState = localStorage.getItem('kanban-state');
+        const serializedState = localStorage.getItem('core-state');
         if (serializedState === null) {
             return {
                 columns: [
